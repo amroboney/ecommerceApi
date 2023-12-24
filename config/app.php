@@ -160,6 +160,8 @@ return [
          * Package Service Providers...
          */
 
+        //  Modules\Auth\ServiceProvider::class,
+
         /*
          * Application Service Providers...
          */
