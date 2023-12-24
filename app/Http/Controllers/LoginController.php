@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\SendOTP;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Requests\LoginRequest;
@@ -22,6 +23,8 @@ class LoginController extends Controller
             ['user_type_id' => $this->userTypeID, 'otp' => $this->otp]
         );
 
-        return $this->getSuccessResponse("the user created successfly", new LoginResource($user), 100);
+        event(new SendOTP($user));
+
+        return $this->getSuccessResponse("The user created successfly", new LoginResource($user), 100);
     }
 }
