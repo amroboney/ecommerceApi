@@ -23,7 +23,7 @@ class User extends Authenticatable
         'password',
         'user_type_id',
         'phone',
-        'otp_code',
+        'otp',
         'status',
         'image'
     ];
