@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
 
             $table->string('name');
+            $table->longText('description');
+            $table->float('price');
             $table->string('image')->nullable();
             $table->boolean('status')->default(true);
             $table->unsignedBigInteger('category_id')->nullable();
