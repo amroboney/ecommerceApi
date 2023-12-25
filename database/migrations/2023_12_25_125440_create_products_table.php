@@ -17,13 +17,13 @@ return new class extends Migration
             $table->string('name');
             $table->string('image')->nullable();
             $table->boolean('status')->default(true);
-            $table->uuid('category_id')->nullable();
+            $table->unsignedBigInteger('category_id')->nullable();
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
-            $table->uuid('unit_id')->nullable();
+            $table->unsignedBigInteger('unit_id')->nullable();
             $table->foreign('unit_id')->references('id')->on('units')->onDelete('cascade');
-            $table->uuid('brand_id')->nullable();
+            $table->unsignedBigInteger('brand_id')->nullable();
             $table->foreign('brand_id')->references('id')->on('brands')->onDelete('cascade');
-            $table->uuid('created_by')->nullable();
+            $table->unsignedBigInteger('created_by')->nullable();
             $table->foreign('created_by')->references('id')->on('users')->onDelete('cascade');
 
             $table->timestamps();

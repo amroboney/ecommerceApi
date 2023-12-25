@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->boolean('status')->default(true);
 
-            $table->uuid('created_by')->nullable();
+            $table->unsignedBigInteger('created_by')->nullable();
             $table->foreign('created_by')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });

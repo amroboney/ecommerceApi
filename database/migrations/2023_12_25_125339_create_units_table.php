@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->boolean('status')->default(true);
             $table->integer('parent_id')->default(0);
-            $table->uuid('created_by')->nullable();
+            $table->unsignedBigInteger('created_by')->nullable();
             $table->foreign('created_by')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
