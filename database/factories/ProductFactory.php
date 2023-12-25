@@ -32,6 +32,7 @@ class ProductFactory extends Factory
             'price' => fake()->randomFloat(2, 10, 1000),
             'image' => fake()->randomElement(['test.png', 'test-1.png']),
             'status' => fake()->randomElement([true, false]),
+            'special' => fake()->randomElement([true, false]),
             'created_by' => $userId,
             'category_id' => $categoryId,
             'unit_id' => $unitId,

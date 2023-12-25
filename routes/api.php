@@ -20,3 +20,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::post('login', 'LoginController@login');
+Route::get('categories', 'CategoryController@getAllActiveCategories');
+Route::get('products', 'ProductController@getAllActiveProducts');
+Route::get('specials', 'ProductController@speicals');
+Route::get('news', 'ProductController@news');
