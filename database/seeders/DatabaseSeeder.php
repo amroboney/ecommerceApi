@@ -31,6 +31,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\Address::factory(50)->create();
         \App\Models\Wishlist::factory(50)->create();
         \App\Models\Cart::factory(50)->create();
+        \App\Models\Reviews::factory(50)->create();
 
     }
 }
