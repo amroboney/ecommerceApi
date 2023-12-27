@@ -6,6 +6,7 @@ use App\Models\Cart;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreCartRequest;
 use App\Http\Requests\DeleteCartRequest;
+use App\Http\Resources\CartResouce;
 
 class CartController extends Controller
 {
@@ -51,5 +52,11 @@ class CartController extends Controller
         $cart->delete();
 
         return $this->getSuccessResponse("The cart delete successfly", '', 100);
+    }
+
+    public function index() {
+
+        $carts =  Cart::with('product')->where('customer_id', auth()->user()->id)->get();
+        return CartResouce::collection($carts);
     }
 }

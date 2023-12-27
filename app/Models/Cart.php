@@ -15,7 +15,7 @@ class Cart extends Model
         'quantity'
     ];
 
-    public function user()
+    public function customer()
     {
         return $this->belongsTo(User::class);
     }
