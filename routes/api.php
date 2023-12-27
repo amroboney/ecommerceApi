@@ -29,5 +29,5 @@ Route::get('news', 'ProductController@news');
 
 
 Route::group(['middleware' => ['auth:sanctum']] ,function () {
-    Route::post('cart', 'CartController@store');
+    Route::apiResource('cart', 'CartController');
 });
