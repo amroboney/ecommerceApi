@@ -31,4 +31,5 @@ Route::get('news', 'ProductController@news');
 Route::group(['middleware' => ['auth:sanctum']] ,function () {
     Route::apiResource('cart', 'CartController');
     Route::apiResource('wishlist', 'WishListController');
+    Route::post('review', 'ReviewController@store');
 });
