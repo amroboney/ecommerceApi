@@ -14,6 +14,13 @@ class OrderItemResouce extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+        return [
+            'quantity' => $this->quantity,
+            'price' => number_format((float) $this->price, 2,) ,
+            'name' => $this->product->name,
+            'description' => $this->product->description,
+            'image' => $this->product->image,
+            
+        ];;
     }
 }

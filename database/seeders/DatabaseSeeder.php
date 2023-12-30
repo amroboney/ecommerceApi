@@ -27,7 +27,8 @@ class DatabaseSeeder extends Seeder
             'name' => 'Amro',
             'email' => 'amroabuelyaman@gmail.com',
             'phone' => 249999080082,
-            'user_type_id' => 3
+            'user_type_id' => 3,
+            "otp" => 1111
         ]);
 
         \App\Models\User::factory(10)->create();
@@ -40,7 +41,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\Cart::factory(50)->create();
         \App\Models\Reviews::factory(50)->create();
         \App\Models\Order::factory(50)->create();
-        \App\Models\OrderItem::factory(50)->create();
+        \App\Models\OrderItem::factory(500)->create();
 
     }
 }

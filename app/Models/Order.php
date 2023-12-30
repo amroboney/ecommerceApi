@@ -10,6 +10,6 @@ class Order extends Model
     use HasFactory;
 
     public function orderDetails() {
-        return $this->hasMany(OrderItem::class);
+        return $this->hasMany(OrderItem::class)->with('product');
     }
 }
