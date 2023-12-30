@@ -23,7 +23,14 @@ class DatabaseSeeder extends Seeder
             'password' => "123456"
         ]);
 
-        \App\Models\User::factory(50)->create();
+        \App\Models\User::factory()->create([
+            'name' => 'Amro',
+            'email' => 'amroabuelyaman@gmail.com',
+            'phone' => 249999080082,
+            'user_type_id' => 3
+        ]);
+
+        \App\Models\User::factory(10)->create();
         \App\Models\Unit::factory(50)->create();
         \App\Models\Brand::factory(50)->create();
         \App\Models\Category::factory(50)->create();
