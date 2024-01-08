@@ -34,4 +34,5 @@ Route::group(['middleware' => ['auth:sanctum']] ,function () {
     Route::post('review', 'ReviewController@store');
     Route::get('orders', 'OrderController@index');
     Route::post('orders', 'OrderController@store');
+    Route::get('sliders', 'SliderController@index');
 });
