@@ -38,7 +38,7 @@ class LoginController extends Controller
             $user->token = 'Bearer '.$user->createToken('user')->plainTextToken;
             return $this->getSuccessResponse("The user created successfly",new UserResource($user) ,100);
         }
-        return $this->getErrorResponse('mismatch data',"", 102);
+        return $this->getErrorResponse('mismatch data',["name"=> ""], 102);
     }   
 
     public function checkOtp($phone, $otp) {
